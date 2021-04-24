@@ -60,7 +60,7 @@ printstr("Pin: ",0);
     }
 ``` 
 
-Let's observe on ```checkpin``` function:
+Observe on ```checkpin``` function:
 ```c
 
 undefined8 checkpin(char *param_1)
