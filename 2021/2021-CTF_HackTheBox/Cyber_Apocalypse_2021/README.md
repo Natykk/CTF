@@ -4,7 +4,7 @@ Writeups pour [CTF HackTheBox 2021 Cyber Apocalypse 2021](https://www.hackthebox
 
 Un CTF de 5 jours !!!
 
-![certificate.JPG](images/certificate.JPG)
+![certificate.png](images/certificate.png)
 
 Images:
 
