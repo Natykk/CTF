@@ -4,7 +4,7 @@ Category: Crypto, Points: 300
 
 ![info.JPG](images/info.JPG)
 
-And attached file [output.txt](output.txt)
+On nous donne ce fichier [output.txt](output.txt)
 
 # Nintendo Base64 Solution
 
