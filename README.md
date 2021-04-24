@@ -10,4 +10,4 @@
 
 **xXxPassword123xXx , 59/4740**
 
-https://github.com/bl4de/ctf/blob/master/2021/CyberApocalypse_CTF/
+https://github.com/Natykk/CTF/tree/main/2021/2021-CTF_HackTheBox
