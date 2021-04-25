@@ -1,6 +1,6 @@
 # CTF (Capture The Flag) writeups
 
-- [2021 Writeups](#2021)
+- [2021 Writeups](https://github.com/Natykk/CTF/tree/main/2021)
 
 
 
