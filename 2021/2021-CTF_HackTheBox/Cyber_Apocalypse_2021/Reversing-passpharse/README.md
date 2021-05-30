@@ -2,7 +2,7 @@
 
 Category: Reversing, Points: 300
 
-![info.JPG](images/info.JPG)
+![info.JPG](https://user-images.githubusercontent.com/30731432/120116735-d8fbe800-c189-11eb-944a-7519b1c3e6ac.png)
 
 Attached file: [passphrase](passphrase)
 
