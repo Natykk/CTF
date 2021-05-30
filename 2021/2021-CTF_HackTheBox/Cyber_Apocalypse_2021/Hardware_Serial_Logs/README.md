@@ -4,20 +4,21 @@ Category: Hardware, Points: 300
 
 We have gained physical access to the debugging interface of the Access Control System which is based on a Raspberry Pi-based IoT device. We believe that the log messages of this device contain valuable information of when our asset was abducted.
 
-Attached file: 
+Attached file:  [serial_logs](serial_logs.sal)
 
 # Serial Logs Solution
 
 Premièrement on reçoit un fichier .sal avec une simple recherche google on ce rend compte les fichier .sal sont utilisé par le logiciel Logic 2 de Saleae. 
 
-IMAGE 1_logic 
+
+![1_logic.png](images/1_logic.png)
 
 
 On peut voir qu un seul channel et utilisé pour faire passé des données donc on peut déjà en déduire que c'est en série et non en parallèle , si on ce renseigne sur les protocole de communication qui utilise 1-2 channel et qui son généralement utilisé par des microcontrôleur on tombe rapidement sur le protocole [UART](https://en.wikipedia.org/wiki/Universal_asynchronous_receiver-transmitter) alors analysons-le. Pour ce faire, nous devons d'abord connaître le débit en bauds, également connu sous le nom de vitesse de transfert. Sa mesure standard est le bit/s, donc pour calculer le débit en bauds de ce signal, nous faisons un zoom sur le tout premier signal et voyons la période minimale du signal.
 
 
+![2_baud.png](images/2_baud.png)
 
-IMAGE 2_baud
 
 
 
@@ -30,11 +31,11 @@ On pouvons voir que la plus petite période entre deux valeurs élevées est de 
 ```
 Maintenant si on prend la valeur standard la plus proche qui est 115200 et que l'on configure l'analyseur avec cette valeur dans le champ "baud rate" 
 
-IMAGE 3_decode
+![3_decode.png](images/3_decode.png)
 
-Dans l'image suivante, on vois que Logic 2 a décodé correctement la communication et on peut voir les messages au dessus des signaux :  
+Dans l'image suivante, on vois que Logic 2 a décodé correctement la communication et on peut voir les messages au dessus des signaux. 
 
-IMAGE 3_message
+![3_message.png](images/3_message.png)
 
 Si l'on extract les données en CSV et que l'on range un peut le fichier on peut voir ceci 
 
@@ -50,11 +51,11 @@ Si l'on extract les données en CSV et que l'on range un peut le fichier on peut
 ```
 Si on regarde le dernier message lisible il est dit qu'il change le baud rate pour passer sur la valeur de backup , puis les messages ensuit sont illisible alors il nous suffit de recalculer le baud rate pour la section qui est actuellement illisible 
 
-IMAGE 4_baud2
+![4_baud2.png](images/4_baud2.png)
 
 On peut voir que que la plus petite est de 13.48us donc 1000000 / 13.48 = 74183 bits/s , il n'y a pas de valeur standard proche donc on changer le baud rate par la valeur calculer et on re-export les données en CSV 
 
-IMAGE 5_export
+![5_export.png](images/5_export.png)
 
 Et Voila ! 
 
